@@ -44,12 +44,16 @@ identify_chip() {
         mt6989)
             echo "D9300"; return 0
             ;;
+        mt6897)
+            echo "D8300"; return 0
+            ;;
         mt6991|mt6991w)
             echo "D9400"; return 0
             ;;
     esac
     case "$SOC_PLAT" in
         mt6989) echo "D9300"; return 0 ;;
+        mt6897) echo "D8300"; return 0 ;;
         mt6991) echo "D9400"; return 0 ;;
     esac
     return 1
@@ -83,6 +87,7 @@ deploy_cts_daemon() {
         8G1) SRC_CFG="$MODPATH/config/config_8G1.json" ;;
         8G5) SRC_CFG="$MODPATH/config/config_8G5.json" ;;
         7P3) SRC_CFG="$MODPATH/config/config_7P3.json" ;;
+        D8300) SRC_CFG="$MODPATH/config/config_D8300.json" ;;
         D9300) SRC_CFG="$MODPATH/config/config_D9300.json" ;;
         D9400) SRC_CFG="$MODPATH/config/config_D9400.json" ;;
         *)   SRC_CFG="$MODPATH/config/config_8E5.json"
